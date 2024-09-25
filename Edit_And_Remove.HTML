@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit and remove elements in DOM</title>
+  </head>
+  <body style="background-color: #212121; color: #fff">
+    <ul class="javascript">
+      <li>javascript</li>
+    </ul>
+  </body>
+  <script>
+    function addLanguage(lang) {
+      const li = document.createElement("li");
+      li.innerHTML = `${lang}`;
+      document.querySelector(".javascript").appendChild(li);
+    }
+    addLanguage("python");
+    addLanguage("C++");
+
+    //Edit
+    const secondLang = document.querySelector("li:nth-child(2)");
+    // secondLang.innerHTML = "Mojo";
+    const newLi = document.createElement("li");
+    newLi.textContent = "Mojo";
+    secondLang.replaceWith(newLi);
+    //edit
+    const first = document.querySelector("li:first-child");
+    first.outerHTML = "<li>TypeScript</li>";
+  </script>
+</html>
